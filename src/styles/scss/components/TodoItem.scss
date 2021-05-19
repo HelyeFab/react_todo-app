@@ -1,0 +1,37 @@
+@use'../abstracts' as *;
+
+ 
+.TodoItem{
+   
+  
+    &_Container{
+      display: flex;
+      justify-content: space-between;
+      background-color: #eadff06e;
+      padding: 1rem;
+      margin: 1rem 0;
+       & li {
+         list-style: none;
+         font-weight: 500;
+         
+       }
+    }
+    &_task li {
+      cursor: pointer;
+      
+  
+    }
+  }
+  
+.isCompleted {
+  text-decoration: line-through;
+  color: $color-green;
+}
+
+  .fa-pencil-alt {
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+  .fa-trash-alt {
+    cursor: pointer;
+  }

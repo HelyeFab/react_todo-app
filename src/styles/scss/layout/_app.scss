@@ -1,0 +1,29 @@
+@use'../abstracts' as *;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #ed2a90,
+    #dd3aaa,
+    #c74bc1,
+    #a95bd5,
+    #8269e3,
+    #657df1,
+    #418ffa,
+    #009fff,
+    #00baff,
+    #00d2ff,
+    #00e7fc,
+    #5ffbf1
+  );
+  padding: 1rem;
+  font-family: 'Rubik', sans-serif;
+  color: rgb(240, 239, 239);
+  font-size: $fontStandard;
+  font-weight: 300;
+}

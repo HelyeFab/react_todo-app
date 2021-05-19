@@ -1,0 +1,187 @@
+@mixin boxShadow-light {
+    box-shadow: -3px -3px 7px #cfcfcf73,
+    3px 3px 5px rgba(94, 104, 121, 0.377);
+}
+
+@mixin boxShadow-light-inset {
+    box-shadow: inset -3px -3px 7px #cfcfcf73,
+       inset 3px 3px 5px rgba(94, 104, 121, 0.37);
+}
+
+
+
+
+
+
+
+@mixin switch__holder {
+    box-shadow: -8px -8px 15px rgba(185, 184, 184, 0.7),
+        10px 10px 10px rgba(0, 0, 0, .3),
+        inset 8px 8px 15px rgba(187, 187, 187, 0.7),
+        inset 10px 10px 10px rgba(0, 0, 0, .3);
+}
+
+@mixin switch__toggle {
+    box-shadow:
+        inset 8px 8px 15px rgba(255, 255, 255, .6),
+        inset 10px 10px 10px rgba(0, 0, 0, .25);
+}
+
+@mixin switch__toggle-before {
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
+        3px 3px 5px rgba(0, 0, 0, .25);
+    transition: .3s
+}
+
+
+@mixin switch__toggle-checked {
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
+        3px 3px 5px $main-hue;
+
+
+}
+
+
+
+
+
+
+
+// !--------------GRID Section--------------
+
+
+@mixin gridMaster {
+    grid-template-areas: 
+    'nav nav nav nav'
+    'img img content content'
+    'img img content content'
+    'img img content content';
+}
+
+@mixin gridSecondary {
+   grid-template-areas: 
+
+   'content   content  img   img  '
+   '     .        .     .    .    '
+   '     .        .     .    .    '
+   '     .        .     .    .   ';
+
+      
+
+}
+
+
+
+@mixin gridSecondaryReverse {
+    grid-template-areas:
+        '.    .     .    . '
+        'content content img img '
+        'content content img img '
+        'content content img img ';
+}
+
+
+@mixin gridMasterMobile {
+       grid-template-areas: 
+       'nav'
+       '.'
+       'img'
+       'content'
+       'content'
+       'content';  
+}
+
+@mixin gridSecondaryMobile {
+    grid-template-areas:
+        'img'
+        '.'
+        'content'
+        'content'
+        'content'
+        'content';
+}
+
+
+// !--------------GRID Section ENDS--------------
+
+@mixin highlight{
+
+        background: transparent;
+        background-image: linear-gradient(120deg, #12a4d011 0, #2ac955 100%);
+        background-repeat: no-repeat;
+        background-size: 100% .28em;
+        background-position: 0 70%;
+        position: relative;
+        z-index: 1;
+        
+    
+}
+
+
+
+// ! MEDIA QUERY MANAGER
+
+//? Break points
+//?       - 400px:      Small screens
+//? 400   - 600px:      Phone
+//? 600 -   900px:      Tablet 🇵portrait
+//? 900 -  1200px:      Tablet landscape
+//? 1200 - 1800px:      Normal desktop
+//? 1800 - 900px:       Big desktop
+
+
+// $breakpoint argument choices🇵: 
+// -phone
+// -tab-port
+// -tab-land
+// -big-desk
+
+
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint==small {
+        @media (max-width: 25em) {
+            //400px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            //600px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-port {
+        @media (max-width: 56.25em) {
+            //900px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==tab-land {
+        @media (max-width: 75em) {
+            //1200px
+            @content
+        }
+
+        ;
+    }
+
+    @if $breakpoint==big-desk {
+        @media (min-width: 112.5em) {
+            //1800px
+            @content
+        }
+
+        ;
+    }
+}

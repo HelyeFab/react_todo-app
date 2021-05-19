@@ -1,0 +1,23 @@
+@use'../abstracts' as *;
+
+.TodoEdit_form {
+  margin-top: $marginStandard;
+  display: flex;
+
+  & input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+  }
+  & button {
+    border: 1px solid white;
+    background-color: #dd3aaa;
+    color: white;
+    padding: 9px;
+    transition: all 2s ease-in-out;
+
+    &:hover {
+      background-color: #510564;
+    }
+  }
+}
